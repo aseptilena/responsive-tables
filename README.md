@@ -22,6 +22,10 @@ Copy the file `_responsive_tables.scss` in the folder "source" and place it in y
 
 `@import "responsive_tables";`
 
+# Demo
+
+![Responsive tables demo](assets/responsive-tables-demo.gif)
+
 # Support
 This software has been tested on all modern browsers. Including mobile browsers.
 
