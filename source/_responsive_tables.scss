@@ -1,0 +1,135 @@
+.list{
+
+    &__header {
+        width: 100%;
+        background-color: $aqua;
+        padding: $padding-small;
+
+        @media screen and (min-width: $screen-sm) {
+            padding: $padding-medium;
+        }
+
+        &__title {
+            font-family: $font-primary;
+            color: $white;
+            font-weight: $light;
+            margin-bottom: .5em;
+        }
+    }
+
+    &__wrapper {
+        background-color: $gray-lighter;
+        width: 100%;
+
+        .list-view {
+            background: $white;
+            margin-bottom: 0;
+            display: table;
+            border-collapse: collapse;
+            width: 100%;
+
+            &__header{
+                display: none;
+
+                    @media screen and (min-width: $screen-md) {
+                        display: table-row;
+                        padding: $padding-medium;
+                        width: 100%;
+                        background-color: $aqua;                        
+                    }
+
+                &__cell {
+                    color: $white;
+                    font-size: 1em;
+                    padding: 5px 0;
+
+                    &--action{
+                        position: absolute;
+                        top: 10px;
+                        right: $padding-small;
+
+                        @media screen and (min-width: $screen-xs-min) {
+                            right: $padding-medium;
+                        }
+
+                        @media screen and (min-width: $screen-md) {
+                            position: initial;
+                            text-align: right;
+                        }
+
+                    }
+
+                    @media screen and (min-width: $screen-md) {
+                        display: table-cell;
+                        padding: $padding-medium $padding-medium;
+                    }
+
+                }
+            }
+
+            &__body {
+
+                &__row {
+                    position: relative;
+                    border-top: 1px solid $gray;
+                    width: 100%;
+                    padding: $padding-small $padding-medium;
+
+                    @media screen and (min-width: $screen-md) {
+                        display: table-row;
+                        // height: 73px;
+                        padding: 0;
+                    }
+                }
+
+                &__cell {
+                    padding: 5px 0;
+                    vertical-align: middle;
+
+                    @media screen and (min-width: $screen-md) {
+                        display: table-cell;
+                        padding: $padding-medium $padding-medium;
+                    }
+
+                    .row div {
+                        color: $gray-light;
+                        
+                        .list-view__body__cell__header,
+                        .list-view__body__cell__label {
+                            display: block;
+                            color: $text;
+                            font-weight: $bold;
+                        }
+
+                        @media screen and (max-width: $screen-sm){
+                            margin-bottom: 10px;
+
+                            .list-view__body__cell__header 
+                            {
+                                font-size: 1.25em;
+                                padding-bottom: 30px;
+                            }                            
+                        }
+                    }
+
+                    &--action {
+                        // position: relative;
+
+                        @media screen and (max-width: $screen-md) {
+                            display: inline;
+                            float: right;
+                            width: 20%;
+                            position: absolute;
+                            top: 35%;
+                            right: 10px;
+                            padding:0;
+                        }
+
+                    }
+                }
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,167 @@
+//BUTTONS STYLESHEET
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-family: $font-primary;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  white-space: nowrap;
+  font-size: $btn-font-size;
+  padding: 0.5em 1em; // 8px 16px
+  border: none;
+  @include border-radius ($btn-border-radius);
+  @include box-shadow (0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24));
+  @include transition (all, 200ms);
+
+  &:active,
+  &:focus {
+	 outline: 0;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    padding: 0.8em 1em;
+  }
+
+  > .stimuliz-icon {
+    top: 2px;
+  }
+}
+
+//Button types
+
+.btn--primary {
+  @include button-variant($btn-primary-color, $btn-primary-bg);
+}
+// Info appears as gray
+.btn--secondary {
+  @include button-variant($btn-secondary-color, $btn-secondary-bg);
+}
+// Success appears as green
+.btn--success {
+  @include button-variant($btn-success-color, $btn-success-bg);
+}
+// Warning appears as orange
+.btn--warning {
+  @include button-variant($btn-warning-color, $btn-warning-bg);
+}
+// Danger and error appear as red
+.btn--danger {
+  @include button-variant($btn-danger-color, $btn-danger-bg);
+}
+// Button with white background
+.btn--white {
+  @include button-variant($text, $white);
+}
+// Button with gray background
+.btn--gray {
+  @include button-variant($text, $gray);
+}
+
+.btn--disabled {
+  cursor: $cursor-disabled;
+  pointer-events: none; // Future-proof disabling of clicks
+  @include opacity(.5);
+}
+
+//
+// Button groups
+// --------------------------------------------------
+
+// Make the div behave like a button
+.btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  float:right;
+  @include border-radius ($border-radius);
+  @include box-shadow (0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24));
+
+  > .btn {
+    position: relative;
+    float: left;
+    @include box-shadow (none);
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+  }
+}
+
+// Prevent double borders when buttons are next to each other
+.btn-group {
+  .btn + .btn,
+  .btn + .btn-group,
+  .btn-group + .btn,
+  .btn-group + .btn-group {
+    margin-left: -1px;
+  }
+}
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+  border-radius: 0;
+}
+
+// Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
+.btn-group > .btn:first-child {
+  margin-left: 0;
+  border-right: 1px solid $white;
+
+  &:not(:last-child):not(.dropdown-toggle) {
+    @include border-right-radius(0);
+  }
+}
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .dropdown-toggle:not(:first-child) {
+  @include border-left-radius(0);
+}
+
+// On active and open, don't show outline
+.btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+
+// Rotate dropdown button on open state
+.btn-group > .dropdown-toggle > span {
+  @include transition(all, 200ms);
+}
+
+.open > .dropdown-toggle > span {
+  @include rotate(180deg);
+}
+
+
+// Split button dropdowns
+// ----------------------
+
+// Give the line between buttons some depth
+.btn-group > .btn + .dropdown-toggle {
+  padding-left: 1em;
+  padding-right: 1em;
+  border-left: 1px solid $white;
+}
+
+//In lists give dropdown toggles rounded corners
+.list__wrapper {
+  .btn-group > .btn--secondary + .dropdown-toggle {
+    @media screen and (max-width: $screen-sm) {
+      @include border-left-radius(5px);
+    }
+  }
+}
+
+// The clickable button for toggling the menu
+// Remove the gradient and set the same inset shadow as the :active state
+.btn-group.open .dropdown-toggle {
+  @include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+}

@@ -1,0 +1,197 @@
+
+//LAYOUT STYLES
+#layout__wrapper{
+  width:100%;
+  height:100%;
+  bottom:0;
+  left:0;
+  top:0;
+  right:0;
+  position: relative;
+  background: $gray;
+
+  &--test {
+    @extend #layout__wrapper;
+    position: absolute;
+    overflow: hidden;
+  }
+}
+
+ #header{
+  position: relative;
+  background:$white;
+  display: inline-block;
+  width: 100%;
+  padding: $padding-medium;
+  @include box-shadow (0px 0px 4px 0px rgba(0,0,0,0.12), 0px 4px 4px 0px rgba(0,0,0,0.24));
+
+  @media screen and (min-width: $screen-md){
+    margin-bottom:-5px;
+  }
+  &--public{
+    @extend #header;
+    @include box-shadow (0px 0px 4px 0px rgba(0,0,0,0.12), 0px 4px 4px 0px rgba(0,0,0,0.24));
+  }
+ }
+
+ #footer{
+  position: relative;
+  padding: 0 $padding-small;
+  margin-bottom: $padding-small;
+
+  @media screen and (min-width: $screen-sm) {
+    padding: 0 $padding-medium;
+    margin-bottom: $padding-medium;
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    margin-bottom: $padding-large;
+  }
+ }
+
+.section__wrapper{
+  padding: $padding-small 0;
+  margin-bottom: $padding-small;
+  background: $white;
+  @include box-shadow (0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24));
+
+  &--public{
+    padding: $padding-small 0;
+    margin-bottom: $padding-small;
+    background: $white;
+    @include box-shadow (0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24));
+  }
+
+  @media screen and (min-width: $screen-sm){
+    padding: $padding-medium 0;
+    margin-bottom: $padding-medium;
+  }
+
+  @media screen and (min-width: $screen-lg){
+    margin-bottom: $padding-large;
+  }
+}
+
+.section__wrapper--nopadding{
+  background: $white;
+  margin-bottom: $padding-small;
+  @include box-shadow (0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24));
+
+  @media screen and (min-width: $screen-sm){
+    margin-bottom: $padding-medium;
+  }
+
+  @media screen and (min-width: $screen-lg){
+    margin-bottom: $padding-large;
+  }
+}
+
+// Section titles
+.section__title{
+  padding-top: $padding-small;
+
+  > h1, h2, h3, h4, h5, h6 {
+    font-weight: $light;
+    line-height: 150%;
+  }
+
+  &--small,
+  &--large {
+    margin: 0;
+    padding-left: $padding-small;
+    padding-right: $padding-small;
+
+    @media screen and (min-width: $screen-sm) {
+      padding-left: $padding-medium;
+      padding-right: $padding-medium;
+    }
+  }
+
+  &--small {
+    padding-top: $padding-medium;
+    padding-bottom: $padding-medium;
+  }
+
+  &--large {
+    padding-top: $padding-medium;
+    padding-bottom: $padding-large;
+  }
+
+  &--bg {
+    margin-top: -$padding-small;
+
+    @media screen and (min-width: $screen-sm) {
+      margin-top: -$padding-medium; 
+    }
+  }
+
+  &.bg--aqua,
+  &.bg--red,
+  &.bg--blue,
+  &.bg--purple {
+    color: $white !important;
+  }
+}
+
+// Columns in the login modal
+.session__modal .column{
+  margin: $padding-medium 0;
+}
+
+.pull-right{
+  float: right;
+}
+
+.pull-left{
+  float: left;
+}
+
+//SPECIFIC LAYOUT STYLES
+
+.layout-public__content {
+  padding: $padding-small;
+
+  @media screen and (min-width: $screen-xs) {
+    padding: $padding-medium;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    padding: 100px;
+  }
+}
+
+.layout__wrapper--public{
+  position: relative;
+  background: #f5f5f5 url("../img/stimulizApp-blurred.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/stimulizApp-blurred.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/stimulizApp-blurred.jpg', sizingMethod='scale')";
+  min-height:100%;
+  height:100%;
+
+  margin: 0 auto; /* the bottom margin is the negative value of the footer's height */
+
+  .session__modal .column{
+    margin: $padding-medium 0;
+  }
+
+  .push {
+    height:105px;
+  }
+}
+
+
+.layout-private__content {
+  padding: $padding-small;
+
+  @media screen and (min-width: $screen-sm) {
+    padding: $padding-medium;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    padding: $padding-large;
+  }
+}

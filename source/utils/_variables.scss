@@ -1,0 +1,64 @@
+//GLOBAL STYLES
+
+//COLORS
+$white:							#ffffff;
+$gray: 							#dedede;
+$gray-dark: 					#666666;
+$gray-darker: 					#333333;
+$black:							#000000;
+
+$text: 							$gray-darker;
+
+$red:							#ea4f5f;							
+$aqua:							#5fbca6;
+$aqua-light:					#A7D6C9;
+$blue:							#1d798b;
+$orange:						#f8ae42;
+$purple:						#413d6a;
+$green-light:					#91c46e;
+$green-dark:					#3db07c;
+$sand:							#f5e7d8;
+
+//FONTS
+$font-primary:					"Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+
+//FONT SIZES
+$font-size-default:				1em; 		// 16px / 16px
+
+$font-size-h1:					3em; 		// 48px / 16px
+$font-size-h2:					2em; 		// 32px / 16px
+$font-size-h3:					1.5em; 		// 24px / 16px
+$font-size-h4:					1.25em; 	// 20px / 16px
+$font-size-h5:					1em; 		// 16px / 16px
+$font-size-h6:					0.75em; 	// 12px / 16px
+
+
+//FONT WEIGHTS
+$light: 						300;
+$regular:						400;
+$bold:							700;
+
+
+//GLOBAL STYLES
+$border-radius: 				5px;
+
+$padding-small:					10px;
+$padding-medium:				15px;
+$padding-large:					30px;
+
+
+//BUTTON STYLES
+$btn-border-radius: 			$border-radius;
+$btn-font-family:				$font-primary;
+$btn-font-size:					$font-size-default;
+$btn-font-weight:				$bold;
+
+//primary button styles
+$btn-primary-color:				$white;
+$btn-primary-bg:				$red;
+$btn-primary-border:			$white;
+
+//secondary button styles
+$btn-secondary-color:			$text;
+$btn-secondary-bg:				$gray;
+$btn-secondary-border:			$white;

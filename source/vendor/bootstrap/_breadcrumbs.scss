@@ -1,0 +1,37 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+  padding: $padding-medium 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+
+  > li {
+    display: inline-block;
+
+    + li:before {
+      content: "\003E"; // Unicode space added since inline-block means non-collapsing white-space
+      padding: 0 5px;
+      color: $gray-darker;
+    }
+
+    a {
+      color: $text;
+      text-decoration: none;
+      @include transition(color, 200ms);
+
+      &:hover {
+        text-decoration: underline;
+        color: $aqua;
+      }
+
+      &.active {
+        color: $aqua;
+        font-weight: $bold;
+      }      
+    }
+  }
+}
