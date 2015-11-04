@@ -18,7 +18,7 @@ Simply include the responsive tables stylesheet in the `<head>` of your HTML fil
 `<link href="folder/responsive-tables.min.css" rel="stylesheet">`
 
 ### 2. SCSS
-Copy the file `_responsive_tables.scss` in the folder "source" and place it in your own sass structure. Import it then in your main sass file using:
+Copy the file `_responsive_tables.scss` in the "source" folder and place it in your own sass structure. Import it then in your main sass file using:
 
 `@import "responsive_tables";`
 
