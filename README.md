@@ -30,7 +30,7 @@ Copy the file `_responsive_tables.scss` in the "source" folder and place it in y
 This software has been tested on all modern browsers. Including mobile browsers.
 
 # License
-Housekeeping is licensed under the MIT License, please see the LICENSE file.
+Responsive tables is licensed under the MIT License, please see the LICENSE file.
 
 # Acknowledgement
 This software is based on the [stackedTable](https://github.com/ralphja16/stackedTable) software from user [ralphja16](https://github.com/ralphja16), as built for Stimuliz.
